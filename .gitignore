@@ -25,4 +25,4 @@ node_modules
 # Docker
 data
 
-dist
+dist/
