@@ -9,13 +9,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AppModule = void 0;
 const common_1 = require("@nestjs/common");
 const config_1 = require("@nestjs/config");
-const prisma_service_1 = require("./prisma/prisma.service");
 const env_1 = require("./env");
 const auth_module_1 = require("./auth/auth.module");
-const create_account_controller_1 = require("./http/controllers/create-account.controller");
-const authenticate_controller_1 = require("./http/controllers/authenticate.controller");
-const create_question_controller_1 = require("./http/controllers/create-question.controller");
-const fetch_recent_questions_controller_1 = require("./http/controllers/fetch-recent-questions.controller");
+const http_module_1 = require("./http/http.module");
 let AppModule = class AppModule {
 };
 exports.AppModule = AppModule;
@@ -27,14 +23,8 @@ exports.AppModule = AppModule = __decorate([
                 isGlobal: true,
             }),
             auth_module_1.AuthModule,
+            http_module_1.HttpModule,
         ],
-        controllers: [
-            create_account_controller_1.CreateAccountController,
-            authenticate_controller_1.AuthenticateController,
-            create_question_controller_1.CreateQuestionController,
-            fetch_recent_questions_controller_1.FetchRecentQuestionsController,
-        ],
-        providers: [prisma_service_1.PrismaService],
     })
 ], AppModule);
 //# sourceMappingURL=app.module.js.map
